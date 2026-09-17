@@ -1,7 +1,14 @@
 fn main() {
-    let fees = 25_000;
-    println!("fees is {}",fees);
+    
+    // while true
 
-    let mut fees = 35_000;
-    println!("fees changed is {}",fees);
+    let mut x = 0;
+    loop {
+        x+=1;
+        println!("x={}",x);
+
+        if x==15 {
+            break;
+        }
+    }
 }
