@@ -1,11 +1,12 @@
 fn main() {
-   let school_string = "School of Science and Teachnology"; // string type 
-   let rating_float = 5.0;        // float type
-   let is_growing_boolean = true; // boolean type
-   let department_integer = 3;    // integer type 
+    let name = "Aisha Lawal";
+    let uni:&str = "Pan-Atlantic University";
+    let addr:&str = "Km 52 Lekki-Epe Expressway, Ibeju-Lekki, Lagos";
+    println!("Name: {}", name);
+    println!("University: {}, \nAddress: {}",uni,addr);
 
-   println!("School Namie is: {}",school_string);
-   println!("School rating on 5 is: {}",rating_float);
-   println!("School is growing : {}",is_growing_boolean);
-   println!("Number of Departments : {}",department_integer);
-   }
+    let department:&'static str = "Computer Science";
+    let school:&'static str = "School of Science and Technology";
+    println!("Department: {}, \nSchool: {}",department,school);
+}
+

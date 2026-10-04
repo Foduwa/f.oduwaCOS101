@@ -1,31 +1,14 @@
-// Rust program to calculate the area of a 
-// triangle for a given base and height 
+fn main(){
+    let name1 = "Ayomide Adesokan";
+    println!("My name is {}",name1);
 
-use std::io;
+    //find and replace
+    let name2 = name1.replace("Ayomide","Adebare");
+    println!("You can also call me {}",name2);
+    let faculty = "Faculty of Science and Technology";
 
-fn main()
-{
-    let mut side1 = String::new();
-    let mut side2 = String::new();
+    //find and replace
+    let school = faculty.replace("Faculty", "School");
+    println!("I am a student of the {}", school);
 
-    println!("Enter base of triangle:");
-    io::stdin().read_line(&mut side1).expect("Not a valid string");
-    let base:f32 = side1.trim().parse().expect("Nota  valid number");
-
-    println!("Enter height of triangle: ");
-    io::stdin().read_line(&mut side2).expect("Not a valid string");
-    let height:f32 = side2.trim().parse().expect("Not a valid number");
-
-    if base > 0.0 {
-        let area:f32 =(base * height) / 2.0;
-        println!("Area of triangle: {}", area);
-    }
 }
-
-
-
-
-
-
-
-    
