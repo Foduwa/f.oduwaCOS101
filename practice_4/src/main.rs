@@ -1,21 +1,16 @@
-// Rust program to determine age pass 
-
-use std::io;
 fn main() {
+    // Name vector
+    let name = vec!["Mary","Sam","Sally","Greg","Ade","Mark","June","Ife"];
 
-    let mut input1 = String::new();
-    let mut input2 = String::new();
+    // Age vector 
+    let age = vec![16,1719,22,20,21,18,23];
 
-    println!("Enter your name if you're a baddie: ");
-    io::stdin().read_line(&mut input1).expect("Not a valid string");
+    println!("\nAge allocation:\n");
 
-    println!("Enter your age: ");
-    io::stdin().read_line(&mut input2).expect("Not a valid string");
-    let age:i32 = input2.trim().parse().expect("Not a valid number");
-
-    if age >= 21 {
-        println!("Welcome to the party {}!", input1);
-    }else {
-        println!("Whomp Whomp you're too young... Go back home kid :) {}",input1);
+    //loop to iterate elements in vector 
+    for i in 0..age.len()
+    {
+        // iterating through i on the vector 
+        println!("{} is {} years old\n",name [i],age[i]);
     }
 }

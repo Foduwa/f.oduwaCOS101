@@ -1,14 +1,21 @@
+// Method to print the get value 
+fn value(n:Option<&char>)
+{
+    println!("Element of a vector {:?}",n);
+}
+
 fn main(){
-    let name1 = "Ayomide Adesokan";
-    println!("My name is {}",name1);
 
-    //find and replace
-    let name2 = name1.replace("Ayomide","Adebare");
-    println!("You can also call me {}",name2);
-    let faculty = "Faculty of Science and Technology";
+    let v = vec!['R','U','S','T','A','C','I','A','N'];
 
-    //find and replace
-    let school = faculty.replace("Faculty", "School");
-    println!("I am a student of the {}", school);
+    let mut input1 = String::new();
+    println!("\nEbter an index vlue btw (0-7)");
+    std::io::stdin().read_line(&mut input1).expect("Failed to read input");
 
+    //index is the non negative value which is smaller than the size of the vector 
+    let index:usize = input1.trim().parse().expect("Invalid input");
+
+    // getting value at given index value 
+    let ch: Option<&char> = v.get(index);
+    value(ch);
 }
