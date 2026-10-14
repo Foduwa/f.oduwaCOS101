@@ -1,12 +1,13 @@
 fn main() {
-    let name = "Aisha Lawal";
-    let uni:&str = "Pan-Atlantic University";
-    let addr:&str = "Km 52 Lekki-Epe Expressway, Ibeju-Lekki, Lagos";
-    println!("Name: {}", name);
-    println!("University: {}, \nAddress: {}",uni,addr);
+    // using Vec::new()
+    let v : Vec<i64> = Vec::new();
 
-    let department:&'static str = "Computer Science";
-    let school:&'static str = "School of Science and Technology";
-    println!("Department: {}, \nSchool: {}",department,school);
+    // printing the size of the vector 
+    println!("\nThe length of Vec::new is: {}",v.len());
+
+    //using macro 
+    let v = vec!["Grace","Effiong", "Basil","Kareem","Susan"];
+
+    // printing the size of the vector 
+    println!("\nThe length of vec macro is: {}",v.len());   
 }
-
