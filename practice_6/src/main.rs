@@ -1,21 +1,11 @@
-// Rust program to count numbers
+fn main() {
+    // Create two vector 
+    let v = vec![1,2,3,4,5,6,7,8];
+    let x = vec![5,6,7,8,9,10,11];
 
-use std::io;
-
-fn main(){
-
-    println!("Enter your lower bound");
-    let mut input1 = String::new();
-    io::stdin().read_line(&mut input1).expect("Failed to read input");
-    let lower_bound:i32 = input1.trim().parse().expect("Failed to input");
-
-    println!("Enter upper bound");
-    let mut input2 = String::new();
-    io::stdin().read_line(&mut input2).expect("Failed to read input");
-    let upper_bound:i32 = input2.trim().parse().expect("Failed to input");
-
-    for x in lower_bound..upper_bound{ // upper_bound is not inclusive
-
-       println!("Count level is {}",x);
-   }
+    // usea  for loop to add elements of the vector 
+    for index in 0..6{
+        let sum = v[index] + x[index];
+        println!("{:?}", sum);
+    }
 }

@@ -1,31 +1,28 @@
-// Rust program to read the height of a person
-// and then print if person is tall, dwarf,
-// or average height person
-
-use std::io;
-
-fn main()
-{
-    let mut input = String::new();
-
-    println!("\nEnter Your Height (in centimetres):");
-    io::stdin().read_line(&mut input).expect("Not a valid string");
-    let height:f32 = input.trim().parse().expect("Not a valid number");
-
-     if height >= 150.0 && height <= 170.0
-    {
-        println!("You are of average height person");
+fn main() {
+    // Create an empty vector "City"
+    let mut city : Vec<String> = Vec::new();
+    // Print City Vector 
+    println!("The city vector has element {}",city.len());
+    // push new elemnts into 
+    let mut input1 = String::new();
+    println!("How many Cities do you want to enter");
+    std::io::stdin().read_line(&mut input1).expect("Failed to read input");
+    let city_num: i32 = input1.trim().parse().expect("Invalid input");
+    for count in 0..city_num {
+        let mut input2 = String::new();
+        println!("Enter city {}", count+1);
+        std::io::stdin().read_line(&mut input2).expect("Failed to read input");
+        let new_city:String = input2.trim().parse().expect("Invalid input");
+        city.push(new_city);
     }
-    else if height > 170.0 && height <= 195.0
+    print!("Your preferred cities are: \n");
+    let mut count=1;
+    // loop iterate elements in vector 
+    for i in city 
     {
-        println!("You are tall. How is the weather up there?:)");
+        // iterating through i on the vector 
+        println!("{} {}", count, i);
+        count+=1;
     }
-    else if height < 150.0 && height > 100.0
-    {
-        println!("Yo shortie in the chat");
-    }
-    else
-    {
-        println!("Abnormal height");
-         }
+
 }
