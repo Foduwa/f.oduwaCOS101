@@ -1,16 +1,20 @@
-use std::io;
-
 fn main() {
-    
-    println!("Enter a number");
-    let mut input1 =String::new();
-    io::stdin().read_line(&mut input1).expect("Failed to read input");
-    let mut num:i32 = input1.trim().parse().expect("Failed to input");
+    // initialization of tuple with data type 
+    let datatype_tuple: (&str, f32, u8) = ("Rust", 3.14, 100);
+    println!("Tuple contents = {:?}", datatype_tuple);
 
-    while num < 10 {
+    // initialization of tuple without data type 
+    let no_datatype_tuple = ("Rust", "fun", 100);
+    println!("Tuple contents = {:?}", datatype_tuple);
 
-        println!("inside loop number value is {}",num);
-        num+=1;
-    }
-    println!("outside loop number value is {}",num);
+    // accessing tiple element at index 0 
+    println!("Value at Index 0 = {}", datatype_tuple.0);
+
+    // accessing tuple element at index 1
+    println!("Value at index 1 = {}", datatype_tuple.1);
+
+    // accessing tuple element at index 2 
+    println!("Value at indedx 2 = {}", datatype_tuple.2);
+
+
 }
