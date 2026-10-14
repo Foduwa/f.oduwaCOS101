@@ -1,21 +1,12 @@
 fn main() {
-    // addition
-    let sum = 5550 + 7310;
-    println!("The sum of 5550 and 7130 = {}", sum);
+    let b:(i32,bool,f64) = (30,true,4.9);
+    print(b);
+}
 
-    // subtraction
-    let difference:f32 = 95.5_0 - 4.3_0;
-    println!("The diffference of 95.5 and 4.3 = {}",difference);
+fn print(x:(i32,bool,f64)) {
 
-    // multiplication
-    let product:f32 = 4.0*30.0;
-    println!("The multiple of 4 and 30 = {}", product);
-
-    // division
-    let quotient = 56.7 / 32.2;
-    println!("The division of 56.7 and 32.2 = {}", quotient);
-
-    // remainder
-    let remainder = 43 % 5;
-    println!("The remainder of 43 and 5 = {}", remainder);
+    println!("Inside print method");
+    // assigns a tuple to distinct variables 
+    let(age,is_male,cgpa) = x;
+    println!("Age is {} , isMale? {},cgpa is {}",age,is_male,cgpa);
 }
