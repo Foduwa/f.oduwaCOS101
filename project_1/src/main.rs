@@ -1,59 +1,33 @@
+use std::io::Write;
+
 fn main() {
+   
+    let headers = "Drink Name,Category\n";
     
-    let aps_levels = vec!["APS 1-2", "APS 3-5", "APS 5-8", "EL1 8-10", "EL2 10-13", "SES"];
-
     
-   // from ranges of 0 ,1 and 2 excluding the 3 
-    let entry_level_slice = &aps_levels[0..3];
-    let employee = ("Lawyer", "Associate");
+    let mut file = std::fs::File::create("nigerian_breweries.csv").expect("create failed");
 
     
+    file.write_all(headers.as_bytes()).expect("write failed");
 
-    if employee.0 == "Lawyer" {
-    if employee.1 == "Paralegal" {
-            println!("Level: {}", aps_levels[0]);
-        }
-    if employee.1 == "Junior Associate" {
-            println!("Level: {}", aps_levels[1]);
-        }
-    if employee.1 == "Associate" {
-            
-            println!("Level: {}", aps_levels[2]); 
-            
-            
-            println!("This position falls under the entry-level slice: {:?}", entry_level_slice);
-        }
-    if employee.1 == "Senior Associate 1-2" {
-            println!("Level: {}", aps_levels[3]);
-        }
-    if employee.1 == "Senior Associate 3-4" {
-            println!("Level: {}", aps_levels[4]);
-        }
-    if employee.1 == "Partner" {
-            println!("Level: {}", aps_levels[5]);
-        }
-    }
+    file.write_all("33 Export,Lager\n".as_bytes()).expect("write failed");
+    file.write_all("Desperados,Lager\n".as_bytes()).expect("write failed");
+    file.write_all("Goldberg,Lager\n".as_bytes()).expect("write failed");
+    file.write_all("Gulder,Lager\n".as_bytes()).expect("write failed");
+    file.write_all("Heineken,Lager\n".as_bytes()).expect("write failed");
+    file.write_all("Star,Lager\n".as_bytes()).expect("write failed");
 
-    if employee.0 == "Office Admin" {
-     if employee.1 == "Intern" {
-            println!("Level: {}", aps_levels[0]);
-        }
-    if employee.1 == "Administrator" {
-        println!("Level: {}", aps_levels[1]);
-        }
-    if employee.1 == "Senior Administrator" {
-            println!("Level: {}", aps_levels[2]);
-        }
-     if employee.1 == "Office Manager" {
-            println!("Level: {}", aps_levels[3]);
-        }
-    if employee.1 == "Director" {
-            println!("Level: {}", aps_levels[4]);
-        }
-     if employee.1 == "CEO" {
-        println!("Level: {}", aps_levels[5]);
-        }
-    }
+    // stout 
+    file.write_all("Legend,Stout\n".as_bytes()).expect("write failed");
+    file.write_all("Turbo King,Stout\n".as_bytes()).expect("write failed");
+    file.write_all("Williams,Stout\n".as_bytes()).expect("write failed");
+
+    // non alcohols
+    file.write_all("Maltina,Non-Alcoholic\n".as_bytes()).expect("write failed");
+    file.write_all("Amstel Malta,Non-Alcoholic\n".as_bytes()).expect("write failed");
+    file.write_all("Malta Gold,Non-Alcoholic\n".as_bytes()).expect("write failed");
+    file.write_all("Fayrouz,Non-Alcoholic\n".as_bytes()).expect("write failed");
+
+   
+    println!("\nData written to file." );
 }
-
- 
