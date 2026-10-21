@@ -1,13 +1,13 @@
+use std::io::Write;
+
 fn main() {
-    // using Vec::new()
-    let v : Vec<i64> = Vec::new();
+    let announce = "Week 9 - Rust File input & Output\n";
+    let dept = "Department of Computer Science";
 
-    // printing the size of the vector 
-    println!("\nThe length of Vec::new is: {}",v.len());
-
-    //using macro 
-    let v = vec!["Grace","Effiong", "Basil","Kareem","Susan"];
-
-    // printing the size of the vector 
-    println!("\nThe length of vec macro is: {}",v.len());   
+    let mut file = std::fs::File::create("data.txt").expect("create failed");
+    file.write_all("Welcome to Rust programming\n"
+      .as_bytes()).expect("write failed");
+    file.write_all(announce.as_bytes()).expect("write failed");
+    file.write_all(dept.as_bytes()).expect("write failed");
+    println!("\nData written to file.");
 }
