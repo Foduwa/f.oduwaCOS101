@@ -1,9 +1,14 @@
-use std::io::Read;
-
 fn main() {
-    let mut file = std::fs::File::open("Welcome_message.txt").unwrap();
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).unwrap();
-    print!("{}",contents);
+    let v = vec![10, 20, 30];
+    let v2 = v;
+    
+    
+    println!("In main {:?}", v2); 
+    
+    
+    display(v2); 
 }
 
+fn display(v: Vec<i32>) {
+    println!("inside display {:?}", v);
+}
