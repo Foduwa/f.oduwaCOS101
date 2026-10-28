@@ -1,11 +1,9 @@
-fn main() {
-    // Create two vector 
-    let v = vec![1,2,3,4,5,6,7,8];
-    let x = vec![5,6,7,8,9,10,11];
+fn add_one(e: &mut i32) {
+    *e += 1;
+}
 
-    // usea  for loop to add elements of the vector 
-    for index in 0..6{
-        let sum = v[index] + x[index];
-        println!("{:?}", sum);
-    }
+fn main() {
+    let mut i = 3;
+    add_one(&mut i);
+    println!("{}", i);
 }
