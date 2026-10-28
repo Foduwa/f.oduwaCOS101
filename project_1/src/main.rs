@@ -1,33 +1,38 @@
-use std::io::Write;
+struct Laptop {
+    brand: String,
+    price: u64,
+}
+
+impl Laptop {
+    fn cost_purchase(&self, quantity: u64) -> u64 {
+        self.price * quantity
+    }
+}
 
 fn main() {
-   
-    let headers = "Drink Name,Category\n";
-    
-    
-    let mut file = std::fs::File::create("nigerian_breweries.csv").expect("create failed");
+    let hp = Laptop {
+        brand: String::from("HP"),
+        price: 650000,
+    };
+    let ibm = Laptop {
+        brand: String::from("IBM"),
+        price: 755000,
+    };
+    let toshiba = Laptop {
+        brand: String::from("Toshiba"),
+        price: 550000,
+    };
+    let dell = Laptop {
+        brand: String::from("Dell"),
+        price: 850000,
+    };
 
-    
-    file.write_all(headers.as_bytes()).expect("write failed");
+    let hp_cost = hp.cost_purchase(3);
+    let ibm_cost = ibm.cost_purchase(3);
+    let toshiba_cost = toshiba.cost_purchase(3);
+    let dell_cost = dell.cost_purchase(3);
 
-    file.write_all("33 Export,Lager\n".as_bytes()).expect("write failed");
-    file.write_all("Desperados,Lager\n".as_bytes()).expect("write failed");
-    file.write_all("Goldberg,Lager\n".as_bytes()).expect("write failed");
-    file.write_all("Gulder,Lager\n".as_bytes()).expect("write failed");
-    file.write_all("Heineken,Lager\n".as_bytes()).expect("write failed");
-    file.write_all("Star,Lager\n".as_bytes()).expect("write failed");
+    let total_cost = hp_cost + ibm_cost + toshiba_cost + dell_cost;
 
-    // stout 
-    file.write_all("Legend,Stout\n".as_bytes()).expect("write failed");
-    file.write_all("Turbo King,Stout\n".as_bytes()).expect("write failed");
-    file.write_all("Williams,Stout\n".as_bytes()).expect("write failed");
-
-    // non alcohols
-    file.write_all("Maltina,Non-Alcoholic\n".as_bytes()).expect("write failed");
-    file.write_all("Amstel Malta,Non-Alcoholic\n".as_bytes()).expect("write failed");
-    file.write_all("Malta Gold,Non-Alcoholic\n".as_bytes()).expect("write failed");
-    file.write_all("Fayrouz,Non-Alcoholic\n".as_bytes()).expect("write failed");
-
-   
-    println!("\nData written to file." );
+    println!("Total cost for 3 laptops from each brand is N{}", total_cost);
 }
